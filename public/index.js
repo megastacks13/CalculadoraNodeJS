@@ -33,7 +33,7 @@ function clearScreen(){
 }
 
 function recallPrevious(){
-    current=previous; // Hace que el valor actual (bien sea n2, bien sea n2) se cambie por el guardado
+    current=Number.isFinite(previous)?previous:0; // Hace que el valor actual (bien sea n2, bien sea n2) se cambie por el guardado
     updateDisplay();
 }
 
@@ -41,22 +41,33 @@ async function calculate() {
     num2 = current;
 
     // Guardar los parámetros
-    const params = new URLSearchParams();
-    params.append('n1', num1);
-    params.append('n2', num2);
-    params.append('operator', operator);
+    // const params = new URLSearchParams();
+    // params.append('n1', num1);
+    // params.append('n2', num2);
+    // params.append('operator', operator);
+    const params = {
+        n1: num1,
+        n2: num2,
+        operator: operator
+    };
 
     // Realiza la solicitud al servidor con método POST
     const response = await fetch('http://localhost:3200/operate', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: params.toString()
+            'Content-Type': 'application/json' // Cambiado a application/json
+    },
+    body: JSON.stringify(params)
+        //     'Content-Type': 'application/x-www-form-urlencoded'
+        // },
+        // body: params.toString()
     });
 
-    previous = await response.text();
+    // previous = await response.text();
+    const data = await response.json(); 
 
+    previous = data.result;
+   
     // Reiniciar los valores
     clearScreen();
     display.value = previous; // Muestra el resultado

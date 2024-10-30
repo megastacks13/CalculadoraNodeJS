@@ -14,68 +14,68 @@
     <link rel="stylesheet" href="./styles.css">
     <script src="index.js"></script>
 </head>
-<body class="d-flex justify-content-center text-center">
-<div class="content-fluid w-75 h-100 vh-100 pt-4">
+<body class=" d-flex justify-content-center text-center">
+<div class="container content-fluid  w-75  vh-100 pt-4">
     <div class="row h-25">
         <div class="col">
-            <input type="text" disabled inputmode="numeric" id="display" class="w-100 h-75 text-end fs-1 "/>
+            <input type="text" disabled inputmode="numeric" id="display" class="w-100 h-75 text-end fs-1 form-control"/>
         </div>
 
     </div>
     <div class="row h-15">
         <div class="col ">
-            <button class="h-75 w-75" onclick="recallPrevious()">Ans</button>
+            <button class="btn btn-outline-secondary h-75 w-75" onclick="recallPrevious()">Ans</button>
         </div>
         <div class="col">
-            <button class="h-75 w-75" onclick="setOperator('sqrt'); calculate()">root</button>
+            <button class="btn btn-outline-secondary h-75 w-75" onclick="setOperator('sqrt'); calculate()">√</button>
         </div>
         <div class="col">
-            <button class="h-75 w-75" onclick="setOperator('^'); calculate()">square</button>
+            <button class="btn btn-outline-secondary h-75 w-75  btn-operator" onclick="setOperator('^'); calculate()">x²</button>
         </div>
         <div class="col">
-            <button class="h-75 w-75" onclick="setOperator('/')">/</button>
-        </div>
-    </div>
-    <div class="row h-15">
-        <div class="col">
-            <button class="h-75 w-75" onclick="addToCurrent(7)">7</button>
-        </div>
-        <div class="col">
-            <button class="h-75 w-75" onclick="addToCurrent(8)">8</button>
-        </div>
-        <div class="col">
-            <button class="h-75 w-75" onclick="addToCurrent(9)">9</button>
-        </div>
-        <div class="col">
-            <button class="h-75 w-75" onclick="setOperator('*')">*</button>
+            <button class="btn btn-outline-secondary h-75 w-75" onclick="setOperator('/')">/</button>
         </div>
     </div>
     <div class="row h-15">
         <div class="col">
-            <button class="h-75 w-75" onclick="addToCurrent(4)">4</button>
+            <button class="btn btn-light h-75 w-75 number-btn" onclick="addToCurrent(7)">7</button>
         </div>
         <div class="col">
-            <button class="h-75 w-75" onclick="addToCurrent(5)">5</button>
+            <button class="btn btn-light h-75 w-75" onclick="addToCurrent(8)">8</button>
         </div>
         <div class="col">
-            <button class="h-75 w-75" onclick="addToCurrent(6)">6</button>
+            <button class="btn btn-light h-75 w-75" onclick="addToCurrent(9)">9</button>
         </div>
         <div class="col">
-            <button class="h-75 w-75" onclick="setOperator('-')">-</button>
+            <button class="btn btn-outline-secondary h-75 w-75" onclick="setOperator('*')">*</button>
         </div>
     </div>
     <div class="row h-15">
         <div class="col">
-            <button class="h-75 w-75" onclick="addToCurrent(1)">1</button>
+            <button class="btn btn-light h-75 w-75" onclick="addToCurrent(4)">4</button>
         </div>
         <div class="col">
-            <button class="h-75 w-75" onclick="addToCurrent(2)">2</button>
+            <button class="btn btn-light h-75 w-75" onclick="addToCurrent(5)">5</button>
         </div>
         <div class="col">
-            <button class="h-75 w-75" onclick="addToCurrent(3)">3</button>
+            <button class="btn btn-light h-75 w-75" onclick="addToCurrent(6)">6</button>
         </div>
         <div class="col">
-            <button class="h-75 w-75" onclick="setOperator('+')">+</button>
+            <button class="btn btn-outline-secondary h-75 w-75" onclick="setOperator('-')">-</button>
+        </div>
+    </div>
+    <div class="row h-15">
+        <div class="col">
+            <button class="btn btn-light h-75 w-75" onclick="addToCurrent(1)">1</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-light h-75 w-75" onclick="addToCurrent(2)">2</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-light h-75 w-75" onclick="addToCurrent(3)">3</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-outline-secondary h-75 w-75" onclick="setOperator('+')">+</button>
         </div>
     </div>
     <div class="row h-15">
@@ -83,13 +83,13 @@
 
         </div>
         <div class="col">
-            <button class="h-75 w-75" onclick="addToCurrent(0)">0</button>
+            <button class="btn btn-light h-75 w-75" onclick="addToCurrent(0)">0</button>
         </div>
         <div class="col">
-            <button class="h-75 w-75" onclick="calculate()">=</button>
+            <button class="btn btn-success h-75 w-75" onclick="calculate()">=</button>
         </div>
         <div class="col">
-            <button class="h-75 w-75" onclick="clearScreen()">C</button>
+            <button class="btn btn-secondary h-75 w-75" onclick="clearScreen()">C</button>
         </div>
     </div>
 </div>

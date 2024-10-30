@@ -9,6 +9,7 @@ const port = 3200;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
 app.use(cors());
 
 app.listen(port, () => {console.log(`Iniciado Servidor en el puerto: ${port}`)});
@@ -31,7 +32,11 @@ app.post('/operate', (req, res) => {
             result = calculadora.multiply(num1, num2);
             break;
         case '/':
-            result = calculadora.divide(num1, num2);
+            if (num2 === 0) {
+                result = 'Invalid division by 0';
+            } else {
+                result = calculadora.divide(num1, num2);
+            }
             break;
         case 'sqrt':
             result = calculadora.root(num1);
@@ -42,5 +47,6 @@ app.post('/operate', (req, res) => {
         default:
             return res.sendStatus(400);
     }
-    return res.status(200).send(result.toString());
+    // return res.status(200).send(result.toString());
+    return res.json({result});
 });
